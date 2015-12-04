@@ -10,6 +10,7 @@ import by_epam.task2.entity.NoteBook;
 
 public class NoteBookConsoleView 
 {
+	/*
 	//Поле класса
 	private NoteBook noteBookToView;
 	
@@ -18,6 +19,7 @@ public class NoteBookConsoleView
 	{
 		this.noteBookToView=noteBookToView;
 	}
+	*/
 	
 	
 	/*
@@ -25,7 +27,7 @@ public class NoteBookConsoleView
 	 * Метод print способен выводить как все записи, так и несколько указанных записей
 	 */
 	//метод print выводящий все записи
-	public void print()
+	public void print(NoteBook noteBookToView)
 	{
 		System.out.println("Printing all of the notes");
 		

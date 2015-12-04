@@ -10,7 +10,7 @@ import by_epam.task2.entity.NoteBook;
 public class NoteBookProvider 
 {
 	private static NoteBookProvider instance = null;//статический экземпляр класса NoteBookProvider со ссылкой instance
-	private NoteBook noteBookToProvide = null;//экземпляр класса NoteBook со ссылкой noteBookToProvide для провайдера instance
+	private NoteBook noteBookToProvide ;//экземпляр класса NoteBook со ссылкой noteBookToProvide для провайдера instance
 	
 	
 	//Переопределяем констуктор по умолчанию
@@ -41,7 +41,7 @@ public class NoteBookProvider
 	
 
 	//Геттер класса. возвращающий записную книгу
-	public NoteBook getNotebook() 
+	public NoteBook getNoteBook() 
 	{
 		return noteBookToProvide;
 	}

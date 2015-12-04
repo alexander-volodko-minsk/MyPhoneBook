@@ -16,14 +16,6 @@ public class NoteBook
 	
 	
 	
-	//Геттер класса
-	public ArrayList<Note> getNotes ()
-	{
-		return notes;
-	}
-	
-	
-	
     /*
      * переопределяем конструктор класса по умолчанию
      * Объект ноутбук будет создаваться, когда создастся объект NoteBookProvider
@@ -33,8 +25,17 @@ public class NoteBook
 		this.notes=new ArrayList<Note>() ;
 	}
 	
-
 	
+	
+	
+	//Геттер класса
+	public ArrayList<Note> getNotes ()
+	{
+		return notes;
+	}
+	
+	
+
 	
 	/*
 	 * Переопределяем метод toString для класса NoteBook
@@ -146,4 +147,17 @@ public class NoteBook
 	 */
 
 
+	
+	
+	/*
+	 * Методы для обработки request
+	 */
+	
+	//Метод добавления записи
+	public void add(Note note) 
+	{
+		this.notes.add(note);
+		System.out.println("Note added");
+	}
+	
 }

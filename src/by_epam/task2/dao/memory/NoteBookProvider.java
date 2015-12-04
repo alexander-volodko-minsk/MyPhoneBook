@@ -3,17 +3,17 @@ package by_epam.task2.dao.memory;
 import by_epam.task2.entity.NoteBook;
 
 /*
- * Класс NoteBookProvider реализован по принципу Singleton
- * Мы выбрали способ, когда NoteBookProvider создастся, когда вызовется метод get Instance
+ * РљР»Р°СЃСЃ NoteBookProvider СЂРµР°Р»РёР·РѕРІР°РЅ РїРѕ РїСЂРёРЅС†РёРїСѓ Singleton
+ * РњС‹ РІС‹Р±СЂР°Р»Рё СЃРїРѕСЃРѕР±, РєРѕРіРґР° NoteBookProvider СЃРѕР·РґР°СЃС‚СЃСЏ, РєРѕРіРґР° РІС‹Р·РѕРІРµС‚СЃСЏ РјРµС‚РѕРґ get Instance
  */
 
 public class NoteBookProvider 
 {
-	private static NoteBookProvider instance = null;//статический экземпляр класса NoteBookProvider со ссылкой instance
-	private NoteBook noteBookToProvide = null;//экземпляр класса NoteBook со ссылкой noteBookToProvide для провайдера instance
+	private static NoteBookProvider instance = null;//СЃС‚Р°С‚РёС‡РµСЃРєРёР№ СЌРєР·РµРјРїР»СЏСЂ РєР»Р°СЃСЃР° NoteBookProvider СЃРѕ СЃСЃС‹Р»РєРѕР№ instance
+	private NoteBook noteBookToProvide = null;//СЌРєР·РµРјРїР»СЏСЂ РєР»Р°СЃСЃР° NoteBook СЃРѕ СЃСЃС‹Р»РєРѕР№ noteBookToProvide РґР»СЏ РїСЂРѕРІР°Р№РґРµСЂР° instance
 	
 	
-	//Переопределяем констуктор по умолчанию
+	//РџРµСЂРµРѕРїСЂРµРґРµР»СЏРµРј РєРѕРЅСЃС‚СѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 	private NoteBookProvider()
 	{
 		noteBookToProvide = new NoteBook();
@@ -22,8 +22,8 @@ public class NoteBookProvider
 	
 	
 	/*
-	 * Статический метод, создающий экземпляр класса NoteBookProvider со ссылкой instance
-	 * или возвращающий уже созданный instance
+	 * РЎС‚Р°С‚РёС‡РµСЃРєРёР№ РјРµС‚РѕРґ, СЃРѕР·РґР°СЋС‰РёР№ СЌРєР·РµРјРїР»СЏСЂ РєР»Р°СЃСЃР° NoteBookProvider СЃРѕ СЃСЃС‹Р»РєРѕР№ instance
+	 * РёР»Рё РІРѕР·РІСЂР°С‰Р°СЋС‰РёР№ СѓР¶Рµ СЃРѕР·РґР°РЅРЅС‹Р№ instance
 	 */
 	public static NoteBookProvider getInstance()
 	{
@@ -40,7 +40,7 @@ public class NoteBookProvider
 	}
 	
 
-	//Геттер класса. возвращающий записную книгу
+	//Р“РµС‚С‚РµСЂ РєР»Р°СЃСЃР°. РІРѕР·РІСЂР°С‰Р°СЋС‰РёР№ Р·Р°РїРёСЃРЅСѓСЋ РєРЅРёРіСѓ
 	public NoteBook getNotebook() 
 	{
 		return noteBookToProvide;
@@ -50,8 +50,8 @@ public class NoteBookProvider
 }
 
 /*
- * Cуществует второй способ Singleton
- * NoteBookProvider создастся при загрузке класса в память(инициализация статических полей)
+ * CСѓС‰РµСЃС‚РІСѓРµС‚ РІС‚РѕСЂРѕР№ СЃРїРѕСЃРѕР± Singleton
+ * NoteBookProvider СЃРѕР·РґР°СЃС‚СЃСЏ РїСЂРё Р·Р°РіСЂСѓР·РєРµ РєР»Р°СЃСЃР° РІ РїР°РјСЏС‚СЊ(РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃС‚Р°С‚РёС‡РµСЃРєРёС… РїРѕР»РµР№)
  */
 
 /*

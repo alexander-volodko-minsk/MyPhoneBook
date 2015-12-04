@@ -9,12 +9,12 @@ public class Runner
 
 	public static void main(String[] args)
 	{
-		NoteBook testNoteBook = NoteBookProvider.getInstance().getNotebook();//создаем тестовый NoteBook
-		Note testNote = new Note("testMessage");//создаем тестовую запись Note
-		testNoteBook.getNotes().add(testNote);//добавляем запись в книгу
-		NoteBookConsoleView testNoteBookConsoleView = new NoteBookConsoleView(testNoteBook);//создаем тестовый NoteBookConsoleView
-		testNoteBookConsoleView.print();//должны увидеть сообщение о выводе всех записей на экран и тестовую запись
-		NoteBookProvider.getInstance();//проверяем правильность Singleton, должны увидеть сообщение об ошибке
+		NoteBook testNoteBook = NoteBookProvider.getInstance().getNotebook();//СЃРѕР·РґР°РµРј С‚РµСЃС‚РѕРІС‹Р№ NoteBook
+		Note testNote = new Note("testMessage");//СЃРѕР·РґР°РµРј С‚РµСЃС‚РѕРІСѓСЋ Р·Р°РїРёСЃСЊ Note
+		testNoteBook.getNotes().add(testNote);//РґРѕР±Р°РІР»СЏРµРј Р·Р°РїРёСЃСЊ РІ РєРЅРёРіСѓ
+		NoteBookConsoleView testNoteBookConsoleView = new NoteBookConsoleView(testNoteBook);//СЃРѕР·РґР°РµРј С‚РµСЃС‚РѕРІС‹Р№ NoteBookConsoleView
+		testNoteBookConsoleView.print();//РґРѕР»Р¶РЅС‹ СѓРІРёРґРµС‚СЊ СЃРѕРѕР±С‰РµРЅРёРµ Рѕ РІС‹РІРѕРґРµ РІСЃРµС… Р·Р°РїРёСЃРµР№ РЅР° СЌРєСЂР°РЅ Рё С‚РµСЃС‚РѕРІСѓСЋ Р·Р°РїРёСЃСЊ
+		NoteBookProvider.getInstance();//РїСЂРѕРІРµСЂСЏРµРј РїСЂР°РІРёР»СЊРЅРѕСЃС‚СЊ Singleton, РґРѕР»Р¶РЅС‹ СѓРІРёРґРµС‚СЊ СЃРѕРѕР±С‰РµРЅРёРµ РѕР± РѕС€РёР±РєРµ
 	}
 
 }

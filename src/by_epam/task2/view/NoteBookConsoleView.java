@@ -4,16 +4,16 @@ import by_epam.task2.entity.Note;
 import by_epam.task2.entity.NoteBook;
 
 /*
- * Класс NoteBookConsoleView, представляет собой вид нашей программы
- * содержит перегруженные методы вывода на консоль записей Note нашей записной книги NoteBook
+ * РљР»Р°СЃСЃ NoteBookConsoleView, РїСЂРµРґСЃС‚Р°РІР»СЏРµС‚ СЃРѕР±РѕР№ РІРёРґ РЅР°С€РµР№ РїСЂРѕРіСЂР°РјРјС‹
+ * СЃРѕРґРµСЂР¶РёС‚ РїРµСЂРµРіСЂСѓР¶РµРЅРЅС‹Рµ РјРµС‚РѕРґС‹ РІС‹РІРѕРґР° РЅР° РєРѕРЅСЃРѕР»СЊ Р·Р°РїРёСЃРµР№ Note РЅР°С€РµР№ Р·Р°РїРёСЃРЅРѕР№ РєРЅРёРіРё NoteBook
  */
 
 public class NoteBookConsoleView 
 {
-	//Поле класса
+	//РџРѕР»Рµ РєР»Р°СЃСЃР°
 	private NoteBook noteBookToView;
 	
-    //Коструктор класса, в качестве параметра передается наша записная книга
+    //РљРѕСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР°, РІ РєР°С‡РµСЃС‚РІРµ РїР°СЂР°РјРµС‚СЂР° РїРµСЂРµРґР°РµС‚СЃСЏ РЅР°С€Р° Р·Р°РїРёСЃРЅР°СЏ РєРЅРёРіР°
 	public NoteBookConsoleView(NoteBook noteBookToView)
 	{
 		this.noteBookToView=noteBookToView;
@@ -21,10 +21,10 @@ public class NoteBookConsoleView
 	
 	
 	/*
-	 * Перегружаем методы print
-	 * Метод print способен выводить как все записи, так и несколько указанных записей
+	 * РџРµСЂРµРіСЂСѓР¶Р°РµРј РјРµС‚РѕРґС‹ print
+	 * РњРµС‚РѕРґ print СЃРїРѕСЃРѕР±РµРЅ РІС‹РІРѕРґРёС‚СЊ РєР°Рє РІСЃРµ Р·Р°РїРёСЃРё, С‚Р°Рє Рё РЅРµСЃРєРѕР»СЊРєРѕ СѓРєР°Р·Р°РЅРЅС‹С… Р·Р°РїРёСЃРµР№
 	 */
-	//метод print выводящий все записи
+	//РјРµС‚РѕРґ print РІС‹РІРѕРґСЏС‰РёР№ РІСЃРµ Р·Р°РїРёСЃРё
 	public void print()
 	{
 		System.out.println("Printing all of the notes");
@@ -34,7 +34,7 @@ public class NoteBookConsoleView
 			System.out.println(noteToView.toString());
 		}
 	}
-	//метод print с переменным числом параметров
+	//РјРµС‚РѕРґ print СЃ РїРµСЂРµРјРµРЅРЅС‹Рј С‡РёСЃР»РѕРј РїР°СЂР°РјРµС‚СЂРѕРІ
 	public void print(Note ... args)
 	{
 		System.out.println("Printing some of the notes");

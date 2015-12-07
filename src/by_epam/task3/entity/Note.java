@@ -1,4 +1,4 @@
-package by_epam.task2.entity;
+package by_epam.task3.entity;
 
 import java.util.Date;
 

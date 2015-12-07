@@ -5,6 +5,7 @@ import java.util.HashMap;
 import by_epam.task3.service.serviceImpl.AddNewNote;
 import by_epam.task3.service.serviceImpl.FindNoteDate;
 import by_epam.task3.service.serviceImpl.FindNoteText;
+import by_epam.task3.service.serviceImpl.ShowNoteBook;
 
 /*
 *  helper имеет в качестве своего поля HashMap<CommandName, InterfaceCommand> commands, в которой хранятся в 
@@ -24,6 +25,7 @@ public class ServiceHelper
     	commands.put(CommandName.ADD_NEW_NOTE, new AddNewNote());
     	commands.put(CommandName.FIND_NOTE_TEXT, new FindNoteText());
     	commands.put(CommandName.FIND_NOTE_DATE, new FindNoteDate());
+    	commands.put(CommandName.SHOW_NOTEBOOK, new ShowNoteBook());
     }
     
     //метод, возвращающий экземпляр класса требуемой команды 

@@ -49,12 +49,12 @@ public class Runner3
         
         
         //Повторяем действия, проверяем не создастся ли новый экземпляр NoteBook(проверяем Singleton)
-        Request request2 = new Request("ADD_NEW_NOTE","toFind FFFFFFIIIIIINNNNNNDDDDDD");
+        Request request2 = new Request("ADD_NEW_NOTE","MUST FIND");
         Response response2 = controller.doAction(request2);
         testNoteBookConsoleView.print(response2.getNoteBookInResponse());
         
         //Проверяем поиск по тексту записи
-        Request request3 = new Request("FIND_NOTE_TEXT","toFind FFFFFFIIIIIINNNNNNDDDDDD");
+        Request request3 = new Request("FIND_NOTE_TEXT","MUST FIND");
         Response response3 = controller.doAction(request3);
         testNoteBookConsoleView.print(response3.getNotesInResponse());
         
@@ -62,7 +62,12 @@ public class Runner3
         Request request4 = new Request("FIND_NOTE_DATE","71");
         Response response4 = controller.doAction(request4);
         testNoteBookConsoleView.print(response4.getNotesInResponse());
-
+        
+        //Выводим на экран записную книгу
+        Request request5 = new Request("SHOW_NOTEBOOK");
+        Response response5 = controller.doAction(request5);
+        System.out.println(response5.getNoteBookInResponse());
+        
 	}
 
 }

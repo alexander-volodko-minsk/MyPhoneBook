@@ -15,11 +15,13 @@ public class FindNoteText implements InterfaceCommand
 	//Метод, возвращающий Response
     public Response execute(Request request)
     {
-    	System.out.println("try to find by text");
     	
     	ArrayList<Note> findedNotes = new ArrayList<Note>();//заводим ArrayList для найденных записей
         
         String context = request.getRequestContext();//получаем строку для совпадения
+        
+        System.out.println("Try to find by text");
+        System.out.println(context);
  
         //validate будет реализованно позже
         

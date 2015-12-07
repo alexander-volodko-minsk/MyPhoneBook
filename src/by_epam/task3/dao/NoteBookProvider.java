@@ -30,11 +30,6 @@ public class NoteBookProvider
 		if (instance == null) 
 		{
 			instance = new NoteBookProvider();
-			System.out.println("created");
-		}
-		else
-		{
-			System.out.println("!cannot created!-was created before");
 		}
 		return instance;
 	}

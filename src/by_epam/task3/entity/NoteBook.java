@@ -48,11 +48,13 @@ public class NoteBook
 		
 		StringBuilder build = new StringBuilder();//создаем строку, которая будет содержать всю информацию
 		
-		build.append("class=");
-		build.append(this.getClass().getName());//получаем имя класса
+		build.append(" [ Class = ");
+		build.append(this.getClass().getName()+"] ");//получаем имя класса
 		
-		build.append(";quantity of notes=");
-		build.append(this.notes.size());//получаем количество записей
+		build.append(" [ Quantity of notes = ");
+		build.append(this.notes.size()+"] "+"\n");//получаем количество записей
+		
+		build.append(notes.toString());//получаем все записи 
 		
 		return 	build.toString();//возвращаем скомпанованную строку
 	}	

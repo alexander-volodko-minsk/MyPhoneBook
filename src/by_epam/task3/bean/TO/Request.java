@@ -18,6 +18,14 @@ public class Request
     	//this.commandDate = new Date();
     }
     
+    //Конструктор класса Request
+    public Request(String commandName)
+    {
+    	this.commandName = commandName;
+    	this.requestContext = "";
+    	//this.commandDate = new Date();
+    }
+    
  
     //Сеттеры и геттеры класса Request
     //commandName

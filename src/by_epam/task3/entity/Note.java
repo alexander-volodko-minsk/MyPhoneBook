@@ -109,17 +109,17 @@ public class Note
 	{
 		StringBuilder build = new StringBuilder();//создаем строку, которая будет содержать всю информацию
 		
-		build.append("class=");
-		build.append(this.getClass().getName());//получаем имя класса
+		build.append(" [ Class = ");
+		build.append(this.getClass().getName()+"] ");//получаем имя класса
 		
-		build.append(";noteText=");
-		build.append(this.noteText);//получаем текст записи
+		build.append(" [ noteText = ");
+		build.append(this.noteText+"] ");//получаем текст записи
 		
-		build.append(";noteImportance=");
-		build.append(this.noteImportance);//получаем важность записи
+		build.append(" [ noteImportance = ");
+		build.append(this.noteImportance+"] ");//получаем важность записи
 		
-		build.append(";noteDate=");
-		build.append(this.noteDate);//получаем дату записи
+		build.append(" [ noteDate = ");
+		build.append(this.noteDate+"] \n");//получаем дату записи
 
 		return build.toString();//возвращаем скомпанованную строку
 	}

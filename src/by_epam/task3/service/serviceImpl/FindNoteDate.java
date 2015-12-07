@@ -16,11 +16,13 @@ public class FindNoteDate implements InterfaceCommand
     @SuppressWarnings("deprecation")
 	public Response execute(Request request)
     {
-    	System.out.println("try to find by date");
     	
     	ArrayList<Note> findedNotes = new ArrayList<Note>();//заводим ArrayList для найденных записей
         
         String context = request.getRequestContext();//получаем строку для совпадения
+        
+        System.out.println("Try to find by date");
+        System.out.println(context);
  
         //validate будет реализованно позже
         
@@ -32,12 +34,12 @@ public class FindNoteDate implements InterfaceCommand
         for(Note someNote : notesToFind)
         {
         	
+        	//формируем из аттрибутов Date строку для сравнения со строкой Request
         	Integer dateOfNote = someNote.getNoteDate().getDate();
         	Integer dayOfNote = someNote.getNoteDate().getDay();
         	String fullDateOfNote = dateOfNote.toString()+dayOfNote.toString();
-        	System.out.println("note "+fullDateOfNote);
-        	System.out.println("context "+context);
-        	
+
+        	//добавляем в коллекцию подходящие записи
         	if(context.equals(fullDateOfNote))
         	{
         		findedNotes.add(someNote);

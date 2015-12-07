@@ -109,7 +109,7 @@ public class Note
 	{
 		StringBuilder build = new StringBuilder();//создаем строку, которая будет содержать всю информацию
 		
-		build.append(" [ Class = ");
+		build.append("\n"+" [ Class = ");
 		build.append(this.getClass().getName()+"] ");//получаем имя класса
 		
 		build.append(" [ noteText = ");
@@ -119,7 +119,7 @@ public class Note
 		build.append(this.noteImportance+"] ");//получаем важность записи
 		
 		build.append(" [ noteDate = ");
-		build.append(this.noteDate+"] \n");//получаем дату записи
+		build.append(this.noteDate+"]"+"\n");//получаем дату записи
 
 		return build.toString();//возвращаем скомпанованную строку
 	}

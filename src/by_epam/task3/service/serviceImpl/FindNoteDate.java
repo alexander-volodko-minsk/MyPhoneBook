@@ -1,5 +1,6 @@
 package by_epam.task3.service.serviceImpl;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import by_epam.task3.bean.TO.Request;
@@ -13,10 +14,9 @@ public class FindNoteDate implements InterfaceCommand
 {
 	
 	//Метод, возвращающий Response
-    @SuppressWarnings("deprecation")
-	public Response execute(Request request)
+    public Response execute(Request request)
     {
-    	
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("dd.MM.yyyy");//заводим форматтер даты
     	ArrayList<Note> findedNotes = new ArrayList<Note>();//заводим ArrayList для найденных записей
         
         String context = request.getRequestContext();//получаем строку для совпадения
@@ -35,9 +35,7 @@ public class FindNoteDate implements InterfaceCommand
         {
         	
         	//формируем из аттрибутов Date строку для сравнения со строкой Request
-        	Integer dateOfNote = someNote.getNoteDate().getDate();
-        	Integer dayOfNote = someNote.getNoteDate().getDay();
-        	String fullDateOfNote = dateOfNote.toString()+dayOfNote.toString();
+        	String fullDateOfNote = dateFormatter.format(someNote.getNoteDate());
 
         	//добавляем в коллекцию подходящие записи
         	if(context.equals(fullDateOfNote))

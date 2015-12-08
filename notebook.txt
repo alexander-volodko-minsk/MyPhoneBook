@@ -1,0 +1,2 @@
+testMessageTask3 1	0	08.12.2015
+MUST FIND	0	08.12.2015

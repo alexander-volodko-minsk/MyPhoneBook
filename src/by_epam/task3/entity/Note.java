@@ -1,5 +1,6 @@
 package by_epam.task3.entity;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
@@ -76,6 +77,14 @@ public class Note
 	 * Конструкторы класса
 	 * ___________________
 	 */
+	//создание записи с указанием без указания данных
+	public Note ()
+	{
+		this.noteText="";
+		this.noteDate=new Date();//дата выставляется согласно текущей дате
+		this.noteImportance=0;//значение важности записи по умолчанию равно "0"
+	}
+	
 	//создание записи с указанием только текста записи
 	public Note (String noteText)
 	{
@@ -107,19 +116,16 @@ public class Note
 	@Override
 	public String toString()
 	{
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("dd.MM.yyyy");//заводим форматтер даты
 		StringBuilder build = new StringBuilder();//создаем строку, которая будет содержать всю информацию
 		
-		build.append("\n"+" [ Class = ");
-		build.append(this.getClass().getName()+"] ");//получаем имя класса
+		build.append(this.noteText);//получаем текст записи
 		
-		build.append(" [ noteText = ");
-		build.append(this.noteText+"] ");//получаем текст записи
+		build.append("\t");
+		build.append(this.noteImportance);//получаем важность записи
 		
-		build.append(" [ noteImportance = ");
-		build.append(this.noteImportance+"] ");//получаем важность записи
-		
-		build.append(" [ noteDate = ");
-		build.append(this.noteDate+"]"+"\n");//получаем дату записи
+		build.append("\t");
+		build.append(dateFormatter.format(this.noteDate));//получаем дату записи
 
 		return build.toString();//возвращаем скомпанованную строку
 	}
@@ -127,7 +133,6 @@ public class Note
 	 * Переопределяем метод toString для класса Note
 	 * __________________________________________________________________________________
 	 */
-
 	
 	
 	

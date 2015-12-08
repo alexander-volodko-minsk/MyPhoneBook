@@ -59,7 +59,7 @@ public class Runner3
         testNoteBookConsoleView.print(response3.getNotesInResponse());
         
         //Проверяем поиск по дате записи
-        Request request4 = new Request("FIND_NOTE_DATE","71");
+        Request request4 = new Request("FIND_NOTE_DATE","08.12.2015");
         Response response4 = controller.doAction(request4);
         testNoteBookConsoleView.print(response4.getNotesInResponse());
         
@@ -67,6 +67,16 @@ public class Runner3
         Request request5 = new Request("SHOW_NOTEBOOK");
         Response response5 = controller.doAction(request5);
         System.out.println(response5.getNoteBookInResponse());
+        System.out.println(response5.getNotesInResponse());
+        
+        //Записываем в файл записную книгу
+        Request request6 = new Request("WRITE_IN_FILE","notebook.txt");
+        Response response6 = controller.doAction(request6);
+        
+        //Читаем записную книгу
+        Request request7 = new Request("READ_FROM_FILE","notebook.txt");
+        Response response7 = controller.doAction(request7);
+        System.out.println(response7.getNotesInResponse());
         
 	}
 

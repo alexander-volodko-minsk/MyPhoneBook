@@ -37,6 +37,7 @@ public class Response
 	
 	
 	
+	
     //Сеттеры и геттеры класса Response
     //noteInResponse
 	public Note getNoteInResponse() 

@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 import by_epam.task3.bean.TO.Request;
 import by_epam.task3.bean.TO.Response;
-import by_epam.task3.dao.NoteBookProvider;
 import by_epam.task3.entity.Note;
-import by_epam.task3.entity.NoteBook;
 import by_epam.task3.service.InterfaceCommand;
+import by_epam.task4.classesForDaoPattern.FindDao;
+import by_epam.task4.classesForDaoPattern.DaoFactory;
 
 public class FindNoteText implements InterfaceCommand 
 {
@@ -16,30 +16,32 @@ public class FindNoteText implements InterfaceCommand
     public Response execute(Request request)
     {
     	
-    	ArrayList<Note> findedNotes = new ArrayList<Note>();//заводим ArrayList для найденных записей
-        
         String context = request.getRequestContext();//получаем строку для совпадения
         
-        System.out.println("Try to find by text");
-        System.out.println(context);
- 
-        //validate будет реализованно позже
+        System.out.println("Try to find by text "+context);
         
-        NoteBook noteBook = NoteBookProvider.getInstance().getNoteBook();//получаем экземпляр NoteBook
-        ArrayList<Note> notesToFind = noteBook.getNotes();//получаем ArrayList <Notes>
         
-        //ищем по всем записям notesToFind требуемую строку
-        for(Note someNote : notesToFind)
-        {
-        	if(context.equals(someNote.getNoteText()))
-        	{
-        		findedNotes.add(someNote);
-        	}
-        }
+        /* Cоздаем ссылку абстрактного класса DaoFactory на объект производного (Memory/File)DaoFactory,
+         * который определяет источник данных; 
+         * (какой именно источник данных должен использоваться компилятор поймет сам)
+         */
+        DaoFactory daoFactory = DaoFactory.getFactory();
+        
+        /* Придаем свойства интерфейса FindDao объекту класса (Memory/File)DaoFactory,
+         * вызываем instance(Memory/File)FindDao
+         * (какой именно источник данных должен использоваться компилятор поймет сам)
+         * и вызываем на нем соответстующий метод findByText.
+         */
+        FindDao findDao = daoFactory.getFindDao();
+        
+        //получаем подходящие записи
+        ArrayList<Note> findedNotes = findDao.findByText(context);
         
         //Формируем Response
         Response response = new Response(findedNotes);
         return response;
+
+
     }
     
 }

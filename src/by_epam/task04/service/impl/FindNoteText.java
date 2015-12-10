@@ -18,7 +18,6 @@ public class FindNoteText implements InterfaceCommand
     	
         String context = request.getRequestContext();//получаем строку для совпадения
         
-        System.out.println("Try to find by text "+context);
         
         
         /* Cоздаем ссылку абстрактного класса DaoFactory на объект производного (Memory/File)DaoFactory,

@@ -29,51 +29,6 @@ public class Note
 	
 	
 	/*
-	 * Сеттеры и геттеры полей класса
-	 * ______________________________
-	 */
-	//getNoteText
-	public String getNoteText ()
-	{
-		return noteText;
-	}
-	//setNoteText
-	public void setNoteText (String noteText)
-	{
-		this.noteText=noteText;
-	}
-	
-	
-	//getNoteImportance
-	public int getNoteImportance ()
-	{
-		return noteImportance;
-	}
-	//setNoteImportance
-	public void setNoteImportance (int noteImportance)
-	{
-		this.noteImportance=noteImportance;
-	}
-	
-	
-	//getNoteDate
-	public Date getNoteDate ()
-	{
-		return noteDate;
-	}	
-	//setNoteDate
-	public void setNoteDate (Date noteDate)
-	{
-		this.noteDate=noteDate;
-	}
-	/*
-	 * ______________________________
-	 * Сеттеры и геттеры полей класса
-	 */
-
-	
-	
-	/*
 	 * Конструкторы класса
 	 * ___________________
 	 */
@@ -238,6 +193,50 @@ public class Note
 	/*
 	 * ___________________________________________
 	 * Переопределяем метод equals для класса Note
+	 */
+	
+	
+	/*
+	 * Сеттеры и геттеры полей класса
+	 * ______________________________
+	 */
+	//getNoteText
+	public String getNoteText ()
+	{
+		return noteText;
+	}
+	//setNoteText
+	public void setNoteText (String noteText)
+	{
+		this.noteText=noteText;
+	}
+	
+	
+	//getNoteImportance
+	public int getNoteImportance ()
+	{
+		return noteImportance;
+	}
+	//setNoteImportance
+	public void setNoteImportance (int noteImportance)
+	{
+		this.noteImportance=noteImportance;
+	}
+	
+	
+	//getNoteDate
+	public Date getNoteDate ()
+	{
+		return noteDate;
+	}	
+	//setNoteDate
+	public void setNoteDate (Date noteDate)
+	{
+		this.noteDate=noteDate;
+	}
+	/*
+	 * ______________________________
+	 * Сеттеры и геттеры полей класса
 	 */
 
 }

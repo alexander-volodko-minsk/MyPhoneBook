@@ -9,14 +9,14 @@ import by_epam.task04.dao.factory.impl.MemoryDaoFactory;
 public abstract class DaoFactory 
 {
 	
-	private static final String type = "file";//тип источника данных для работы с записной книгой
+	private static final String Type = "file";//тип источника данных для работы с записной книгой
 	
 	
 	//метод, определяющий источник информации для работы с записной книгой
 	public static DaoFactory getFactory()
 	{
 		
-		switch(type)
+		switch(Type)
 		{	
         	case "memory": 
         	

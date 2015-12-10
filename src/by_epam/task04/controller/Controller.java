@@ -8,7 +8,7 @@ import by_epam.task04.service.ServiceHelper;
 public class Controller 
 {
 	//создаем экземпляр класса helper
-    private final static ServiceHelper helper = new ServiceHelper();
+    private final static ServiceHelper Helper = new ServiceHelper();
     
     
     //Метод, возвращающий Response
@@ -19,7 +19,7 @@ public class Controller
          * Создаем ссылку базового класса(interface InterfaceCommand)
          * на объект производного(из HashMap commads экземпляр класса требуемой команды)
          */
-        InterfaceCommand command = helper.getCommand(commandName); 
+        InterfaceCommand command = Helper.getCommand(commandName); 
         
         Response response = command.execute(request);//выполняем переобределенную команду соответствующего класса
         return response;  //возвращаем Response                

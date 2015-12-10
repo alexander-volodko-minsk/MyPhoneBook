@@ -19,7 +19,6 @@ public class FindNoteDate implements InterfaceCommand
     	ArrayList<Note> findedNotes = new ArrayList<Note>();//заводим ArrayList для найденных записей
     	String context = request.getRequestContext();//получаем строку для совпадения
     	
-    	System.out.println("Try to find by date "+context);//выводим на консоль данные запроса
     	
         /* Cоздаем ссылку абстрактного класса DaoFactory на объект производного (Memory/File)DaoFactory,
          * который определяет источник данных; 

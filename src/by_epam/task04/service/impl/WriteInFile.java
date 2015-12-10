@@ -21,7 +21,6 @@ public class WriteInFile implements InterfaceCommand
         
        
         String pathToWriteFile = request.getRequestContext();//путь к файлу для записи
-        System.out.println("Write in "+pathToWriteFile);
         
         NoteBook noteBook = NoteBookProvider.getInstance().getNoteBook();//получаем экземпляр NoteBook
         

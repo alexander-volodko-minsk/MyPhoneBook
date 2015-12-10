@@ -43,7 +43,6 @@ public class ReadFromFile implements InterfaceCommand
     {
        
         String pathToReadFile = request.getRequestContext();//путь к файлу для чтения
-        System.out.println("Read from "+pathToReadFile);
         
     	
     	ArrayList<Note> notesFromFile = new ArrayList<Note>();//заводим ArrayList для найденных записей

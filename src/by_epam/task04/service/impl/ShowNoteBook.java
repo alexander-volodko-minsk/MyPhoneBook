@@ -13,8 +13,6 @@ public class ShowNoteBook implements InterfaceCommand
     public Response execute(Request request)
     {
         
-        System.out.println("Show the notebook");
-        
         NoteBook noteBook = NoteBookProvider.getInstance().getNoteBook();//получаем экземпляр NoteBook
         
         //Формируем Response

@@ -13,15 +13,7 @@ public class Response
 	private ArrayList<Note> notesListInResponse;
 	private NoteBook noteBookInResponse;
 	
-	/*
-	//Конструктор класса
-	public Response(Note noteInResponse, ArrayList<Note> notesListInResponse, NoteBook noteBookInResponse) 
-	{
-		this.noteInResponse = noteInResponse;
-		this.notesListInResponse = notesListInResponse;
-		this.noteBookInResponse = noteBookInResponse;
-	}
-	*/
+
 	
 	//Конструктор класса
 	
@@ -34,7 +26,6 @@ public class Response
 	{
 		this.notesListInResponse = notesListInResponse;
 	}
-	
 	
 	
 	

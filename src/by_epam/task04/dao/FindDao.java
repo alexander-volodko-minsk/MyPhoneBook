@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import by_epam.task04.entity.Note;
 
+//интерфейс поиска записи
 public interface FindDao
 {
 	public ArrayList<Note> findByDate(String Date);

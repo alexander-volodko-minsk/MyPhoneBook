@@ -3,8 +3,8 @@ package by_epam.task04.dao.factory.impl;
 import by_epam.task04.dao.FindDao;
 import by_epam.task04.dao.InsertUpdateDao;
 import by_epam.task04.dao.factory.DaoFactory;
+import by_epam.task04.dao.impl.file.FileInsertUpdateDao;
 import by_epam.task04.dao.impl.memory.MemoryFindDao;
-import by_epam.task04.dao.impl.memory.MemoryInsertUpdateDao;
 
 //класс, наследуемый от абстракного класса DaoFactory
 public class MemoryDaoFactory extends DaoFactory
@@ -41,13 +41,8 @@ public class MemoryDaoFactory extends DaoFactory
 	
 	
 	
-	
-    /* Придаем свойства интерфейса InsertUpdateDao объекту класса MemoryDaoFactory,
-     * переопределяем метод абстрактного класса DaoFactory - getFindDao и getInsertUpdateDao
-     */
-	InsertUpdateDao insertUpdateDao = new MemoryInsertUpdateDao();
 
-	
+	//переопределяем метод абстрактного класса DaoFactory - getFindDao и getInsertUpdateDao
 	
     public FindDao getFindDao()
     {
@@ -56,7 +51,7 @@ public class MemoryDaoFactory extends DaoFactory
     
     public InsertUpdateDao getInsertUpdateDao()
     {
-    	return insertUpdateDao;
+    	return FileInsertUpdateDao.getInstance();
     }
 
 }

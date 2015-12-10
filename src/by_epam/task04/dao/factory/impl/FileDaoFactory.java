@@ -41,14 +41,9 @@ public class FileDaoFactory extends DaoFactory
 	 */
 	
 	
-    
-    /* Придаем свойства интерфейса InsertUpdateDao объекту класса MemoryDaoFactory,
-     * переопределяем метод абстрактного класса DaoFactory - getFindDao и getInsertUpdateDao
-     */
-    InsertUpdateDao insertUpdateDao = new FileInsertUpdateDao();
 
-    
-    
+    //переопределяем метод абстрактного класса DaoFactory - getFindDao и getInsertUpdateDao
+	
     public FindDao getFindDao()
     {
     	return FileFindDao.getInstance();
@@ -56,7 +51,7 @@ public class FileDaoFactory extends DaoFactory
     
     public InsertUpdateDao getInsertUpdateDao()
     {
-    	return insertUpdateDao;
+    	return FileInsertUpdateDao.getInstance();
     }
 
 

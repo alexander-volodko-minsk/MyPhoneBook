@@ -27,16 +27,6 @@ public class NoteBook
 	
 	
 	
-	
-	//Геттер класса
-	public ArrayList<Note> getNotes ()
-	{
-		return notes;
-	}
-	
-	
-
-	
 	/*
 	 * Переопределяем метод toString для класса NoteBook
 	 * предназначен для того чтобы предоставить ПОЛНУЮ инфу об объекте, должен учесть все
@@ -147,5 +137,14 @@ public class NoteBook
 	 *_______________________________________________
 	 * Переопределяем метод equals для класса NoteBook
 	 */
+	
+	
+	
+	
+	//Геттер класса
+	public ArrayList<Note> getNotes ()
+	{
+		return notes;
+	}
 	
 }

@@ -4,12 +4,12 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import by_epam.task04.dao.InsertUpdateDao;
-import by_epam.task04.dao.NoteBookProvider;
 import by_epam.task04.entity.Note;
-import by_epam.task04.entity.NoteBook;
 
 //Класс имплеменченный от InsertUpdateDao, наследованный от MemoryDaoFactory, работающий с памятью memory
 //Реализован по принципу Singleton
@@ -45,21 +45,28 @@ public class FileInsertUpdateDao implements InsertUpdateDao
 	 */
 	
 	
+	//Метод, переводящий дату из Date в String
+	static public String dateInString(Date someDate)
+	{
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("dd.MM.yyyy");//заводим форматтер даты
+		String dateInString = dateFormatter.format(someDate);//переводим в String требуемого формата данные типа Date
+		return dateInString;
+	}
+	
+	
 	@Override
 	//переопределенный от интерфейса InsertUpdateDao метод addNewNote, работающий с памятью memory
 	public ArrayList<Note> addNewNote(String context)
 	{
-		NoteBook noteBook = NoteBookProvider.getInstance().getNoteBook();//получаем экземпляр NoteBook
-        ArrayList<Note> notesToAdd = noteBook.getNotes();//получаем ArrayList <Notes>
+        ArrayList<Note> notesFromFile = FileFindDao.readFromFile("notebook.txt");//получаем ArrayList <Notes> из файла
         
         //записываем полученный экземпляр записной книги в файл
         try 
         {
             Note note = new Note(context);//создаем запись для добавления по context из Request
             
-            notesToAdd = noteBook.getNotes();
             
-            notesToAdd.add(note);//добавляем запись в записную книгу
+            notesFromFile.add(note);//добавляем запись в записную книгу
             
 			FileWriter outPutSteam = new FileWriter("notebook.txt");//создаем потоковый объект
 	        BufferedWriter bufferedWriter = new BufferedWriter(outPutSteam);//буферизованный оток ввода
@@ -67,7 +74,7 @@ public class FileInsertUpdateDao implements InsertUpdateDao
 	        
 	        
 	        //построчная запись в файл
-	        for(Note someNote : noteBook.getNotes())
+	        for(Note someNote : notesFromFile)
 	        {
 	        	printWriter.println(someNote);//запись одного Note 
 	        }
@@ -79,7 +86,7 @@ public class FileInsertUpdateDao implements InsertUpdateDao
         {
 			System.out.println(e.getMessage());
 		}
-        return notesToAdd;
+        return notesFromFile;
 	}
 
 }

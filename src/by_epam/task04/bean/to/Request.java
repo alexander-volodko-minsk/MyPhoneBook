@@ -7,16 +7,7 @@ public class Request
 	//Поля класса
 	private String commandName;
     private String requestContext;
-    //private Date commandDate;
     
-    
-    //Конструктор класса Request
-    public Request(String commandName, String requestContext)
-    {
-    	this.commandName = commandName;
-    	this.requestContext = requestContext;
-    	//this.commandDate = new Date();
-    }
     
     //Конструктор класса Request
     public Request(String commandName)
@@ -25,8 +16,18 @@ public class Request
     	this.requestContext = "";
     	//this.commandDate = new Date();
     }
+
+     
+    //Конструктор класса Request
+    public Request(String commandName, String requestContext)
+    {
+    	this.commandName = commandName;
+    	this.requestContext = requestContext;
+    	//this.commandDate = new Date();
+    }
     
- 
+
+
     //Сеттеры и геттеры класса Request
     //commandName
 	public String getCommandName() 
